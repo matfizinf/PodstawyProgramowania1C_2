@@ -1,3 +1,5 @@
+from itertools import repeat
+
 napis = 'informatyka'
 
 #I. Fragment tekstu:
@@ -66,3 +68,44 @@ print(cale_zdanie2)
 napis5 = 'prawdopodobieństwo'
 ile_razy_o = napis5.count('o')
 print(ile_razy_o)
+
+#5.) "Mutowalność" stringów
+napis6 = "fiwyka"
+'''napis6[2] = 'z'
+print(napis6)'''
+#Wniosek: String są niemutowalne, czyli nie można podmieniać pojedynczych liter
+
+#Sposób na zmutowanie stringa
+napis6_lista = list(napis6)
+print(napis6_lista)
+napis6_lista[2] = 'z'
+print(napis6_lista)
+napis6 = ''.join(napis6_lista)
+print(napis6)
+
+#6) Długość napisu
+napis7 = 'językpolski'
+print(len(napis7))
+
+#7) Powielanie stringa
+napis8 = 'informatyka'
+print(napis8 * 3)
+
+#8) Funkcje testujące cyfry i litery
+napis9 = 'qwerty1'
+if napis9.isalpha() == True:
+    print('słowo składa tylko się z liter')
+else:
+    print('słowo nie składa się z liter')
+
+napis10 = '1410w'
+if napis10.isdigit() == True:
+    print('słowo składa tylko się z cyfr')
+else:
+    print('słowo nie składa się z cyfr')
+
+napis11 = '1410w\n'
+if napis11.isalnum() == True:
+    print('słowo składa tylko się z cyfr lub liter')
+else:
+    print('słowo nie składa się tylko cyfr lub liter')
