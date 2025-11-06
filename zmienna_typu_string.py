@@ -1,5 +1,7 @@
 from itertools import repeat
 
+from zmienne import slownik
+
 napis = 'informatyka'
 
 #I. Fragment tekstu:
@@ -109,3 +111,46 @@ if napis11.isalnum() == True:
     print('słowo składa tylko się z cyfr lub liter')
 else:
     print('słowo nie składa się tylko cyfr lub liter')
+
+#9. Kody ASCII
+#9.1. ze znaku na kod ASCII
+print(ord('A'))
+
+#9.2. z kodu ASCII na znak
+print(chr(66))
+
+#Zagadka
+print(chr(ord('Z')))
+
+#10. Funkcja translate
+slownik = str.maketrans('ąęćóżśźłń$', 'aecozszln€')
+napis12 = 'ińfórmątyką$'
+napis12_poprawny = napis12.translate(slownik)
+print(napis12_poprawny)
+
+#11. Funkcje dużych i małych literek
+napis13 = 'KoNgO'
+
+napis13_tylo_duze = napis13.upper()
+print(napis13_tylo_duze)
+
+napis13_tylo_male = napis13.lower()
+print(napis13_tylo_male)
+
+#12. Podstawianie ciągu znaków
+napis14 = 'Chleb kosztuje 15 zł, a bułka 5 zł.'
+napis14_w_euro = napis14.replace('zł', '€')
+print(napis14_w_euro)
+print(napis14)
+
+#13. Sortowanie i odwracanie napisu
+#13.1. odwracanie napisu
+napis15 = 'kemot'
+napis15_odwrotnie = napis15[::-1]
+print(napis15_odwrotnie)
+
+#13.2. sortowanie napisu
+napis16 = 'dbca'
+napis16_posortowany_lista = sorted(napis16)
+napis16_posortowany = ''.join(napis16_posortowany_lista)
+print(napis16_posortowany)
